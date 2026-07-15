@@ -1,7 +1,10 @@
 module Algebra where
+import Data.Complex
 
 e :: Double
 e = exp 1.0
+i :: Complex Double
+i = 0.0 :+ 1.0
 nan :: Double
 nan = 0/0
 inf :: Double
@@ -15,3 +18,14 @@ realmin = 4.9e-324
 
 log10 n = logBase 10 n
 log2 n = logBase 2 n
+
+arg :: Complex Double -> Double
+arg c = phase c
+angle :: Complex Double -> Double
+angle c = arg c
+real :: Complex Double -> Double
+real c = realPart c
+imag :: Complex Double -> Double
+imag c = imagPart c
+conj :: Complex Double -> Complex Double
+conj c = conjugate c
