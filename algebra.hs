@@ -16,7 +16,9 @@ realmax = (2 - 1 / 2^52) * 2^1023
 realmin :: Double
 realmin = 4.9e-324
 
+log10 :: Double -> Double
 log10 n = logBase 10 n
+log2 :: Double -> Double
 log2 n = logBase 2 n
 
 arg :: Complex Double -> Double
