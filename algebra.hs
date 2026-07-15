@@ -29,3 +29,12 @@ imag :: Complex Double -> Double
 imag c = imagPart c
 conj :: Complex Double -> Complex Double
 conj c = conjugate c
+
+class ApproxEq a where
+    (~=) :: a -> a -> Bool
+
+instance ApproxEq Double where
+    a ~= b =
+        let diff = abs (a - b)
+            rel  = eps * max (abs a) (abs b)
+        in diff < rel || diff < eps
