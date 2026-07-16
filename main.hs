@@ -12,6 +12,13 @@ main = do
   let c1 = 3.0 :+ 4.0
   let c2 = 3.0 :+ (-4.0)
 
+  assert (true == (true && true))
+  assert (false == (true && false))
+
+  assert (3.0 ~= (absA (-3.0)))
+
+  assert (e ~= (expA 1.0))
+
   assert (1.0 ~= (logA e))
   assert (2.0 ~= (log2 4))
   assert (3.0 ~= (log10 1000))

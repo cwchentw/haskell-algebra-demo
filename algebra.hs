@@ -1,6 +1,9 @@
 module Algebra where
 import Data.Complex
 
+true = True
+false = False
+
 e :: Double
 e = exp 1.0
 i :: Complex Double
@@ -15,6 +18,12 @@ realmax :: Double
 realmax = (2 - 1 / 2^52) * 2^1023
 realmin :: Double
 realmin = 4.9e-324
+
+absA :: Double -> Double
+absA n = Prelude.abs n
+
+expA :: Double -> Double
+expA n = Prelude.exp n
 
 logA :: Double -> Double
 logA n = Prelude.log n
