@@ -16,6 +16,8 @@ realmax = (2 - 1 / 2^52) * 2^1023
 realmin :: Double
 realmin = 4.9e-324
 
+logA :: Double -> Double
+logA n = Prelude.log n
 log10 :: Double -> Double
 log10 n = logBase 10 n
 log2 :: Double -> Double
@@ -31,6 +33,13 @@ imag :: Complex Double -> Double
 imag c = imagPart c
 conj :: Complex Double -> Complex Double
 conj c = conjugate c
+
+sinA :: Double -> Double
+sinA n = Prelude.sin n
+cosA :: Double -> Double
+cosA n = Prelude.cos n
+tanA :: Double -> Double
+tanA n = Prelude.tan n
 
 class ApproxEq a where
     (~=) :: a -> a -> Bool
