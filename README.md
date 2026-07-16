@@ -15,7 +15,7 @@ Haskell provides a runtime well-suited for mathematical thinking rather than pur
 
 Leveraging these runtime features, this project develops an Octave-style internal DSL to enhance mathematical modeling.
 
-## Re-exposing Built-in API
+### Re-exposing Built-in API
 
 Re-exposing built-in APIs is not feasible due to the design philosophy of Haskell. The language does not allow overriding or shadowing of Prelude functions in a clean way, which leads to unavoidable ambiguity. Possible alternatives include:
 
@@ -25,6 +25,24 @@ Re-exposing built-in APIs is not feasible due to the design philosophy of Haskel
 - **Explicit calls**: effectively the same as `qualified` imports, with no real benefit.
 
 Appending a suffix to API names (e.g., `logA`, `sinA`, `asinA`) is the least-effort and most pragmatic alternative to re-exposing built-in APIs. This avoids collisions with Prelude while keeping usage simple and consistent.
+
+### VectorAlgebra
+
+This module demonstrates how to build a simple vector API in Haskell using `Data.Array`.  
+It is intended for **educational and illustrative purposes only**.
+
+#### Note
+
+- Performance is poor for numerical workloads, since `Data.Array` is immutable and operations rebuild arrays.
+- Do not use this for heavy numerical computing.
+
+#### Alternatives
+
+For practical use, prefer:
+
+- `vector` — efficient one‑dimensional sequences (boxed/unboxed).
+- `hmatrix` — BLAS/LAPACK bindings for linear algebra.
+- `repa` — parallel array computations.
 
 ## Project Status
 
