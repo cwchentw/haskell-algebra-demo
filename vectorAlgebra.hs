@@ -28,3 +28,9 @@ vectorAdd a b =
   if bounds a == bounds b
     then Just (zipWithArray (+) a b)
     else Nothing
+
+vectorSub :: Vector -> Vector -> Maybe Vector
+vectorSub a b =
+  if bounds a == bounds b
+    then Just (zipWithArray (-) a b)
+    else Nothing
