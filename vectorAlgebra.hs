@@ -1,5 +1,6 @@
 module VectorAlgebra where
 import Data.Array
+import Algebra
 
 type Vector = Array Int Double
 
@@ -16,6 +17,11 @@ zipWithArray f a b =
 
 vectorLength :: Vector -> Int
 vectorLength v = let (l,u) = bounds v in u - l + 1
+
+vectorEq :: Vector -> Vector -> Bool
+vectorEq a b =
+  bounds a == bounds b &&
+  all (\i -> (a ! i) ~= (b ! i)) (range (bounds a))
 
 vectorAdd :: Vector -> Vector -> Maybe Vector
 vectorAdd a b =

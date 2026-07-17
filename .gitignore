@@ -25,3 +25,7 @@ cabal.project.local~
 # Artifact
 main.exe
 main
+scalarMain.exe
+scalarMain
+vectorMain.exe
+vectorMain
