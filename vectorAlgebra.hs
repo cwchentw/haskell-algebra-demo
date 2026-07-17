@@ -34,3 +34,12 @@ vectorSub a b =
   if bounds a == bounds b
     then Just (zipWithArray (-) a b)
     else Nothing
+
+vectorMul :: Vector -> Vector -> Maybe Vector
+vectorMul a b =
+  if bounds a == bounds b
+    then Just (zipWithArray (*) a b)
+    else Nothing
+
+vectorScalarMul :: Double -> Vector -> Vector
+vectorScalarMul s v = zipWithArray (*) v (replicateArray (vectorLength v) s)
