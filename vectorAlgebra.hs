@@ -5,7 +5,7 @@ import Algebra
 type Vector = Array Int Double
 
 replicateArray :: Int -> Double -> Vector
-replicateArray n val = listArray (0, n-1) (replicate n val)
+replicateArray n val = array (0, n-1) [ (i, val) | i <- [0..n-1] ]
 
 fromList0 :: [Double] -> Vector
 fromList0 xs = listArray (0, length xs - 1) xs
