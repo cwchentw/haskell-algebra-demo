@@ -33,7 +33,7 @@ It is intended for **educational and illustrative purposes only**.
 
 #### Note
 
-- Performance is poor for numerical workloads, since `Data.Array` is immutable and operations rebuild arrays.
+- Performance issues with `Data.Array` stem from Haskell’s boxed representation, which adds indirection and allocation overhead for numerical workloads.
 - Do not use this for heavy numerical computing.
 
 #### Alternatives
